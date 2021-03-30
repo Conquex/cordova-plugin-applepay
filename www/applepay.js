@@ -132,6 +132,18 @@ var ApplePay = {
                 reject(message);
             }, 'ApplePay', 'completeLastTransaction', [status]);
         });
+    },
+
+    openCardSetup: function(status, successCallback, errorCallback) {
+        return new Promise(function(resolve, reject) {
+            exec(function(message) {
+                executeCallback(successCallback, message);
+                resolve(message);
+            }, function(message) {
+                executeCallback(errorCallback, message);
+                reject(message);
+            }, 'ApplePay', 'openCardSetup', [status]);
+        });
     }
 };
 

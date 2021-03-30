@@ -563,5 +563,15 @@
     return shippingMethod;
 }
 
+-(void)openCardSetup:(CDVInvokedUrlCommand*)command
+{
+    if ([PKPassLibrary isPassLibraryAvailable]) {
+        PKPassLibrary* lib = [[PKPassLibrary alloc] init];
+        if ([lib passesOfType:PKPassTypePayment].count == 0) {
+         [lib openPaymentSetup];
+        }
+    }
+}
+
 
 @end

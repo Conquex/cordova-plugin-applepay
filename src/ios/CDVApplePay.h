@@ -26,5 +26,6 @@ typedef void (^ARListUpdateBlock)(PKPaymentAuthorizationStatus, NSArray<PKShippi
 - (void)updateItemsAndShippingMethods:(CDVInvokedUrlCommand*)command;
 - (void)canMakePayments:(CDVInvokedUrlCommand*)command;
 - (void)completeLastTransaction:(CDVInvokedUrlCommand*)command;
+- (void)openCardSetup:(CDVInvokedUrlCommand*)command;
 
 @end
